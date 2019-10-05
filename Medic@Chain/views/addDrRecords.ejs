@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel='stylesheet' href='/stylesheets/index.css' />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+        <script src='/javascripts/main.js'></script>
+    </head>
+    <body class="b1">
+        <br>
+        <button style="padding-inline: 18px;" onclick="logout_med(event)" class="btn btn-danger"> L O G O U T </button><br><br>
+      </a><h1 class="f1" style="margin-top: -1em">Medic@Chain</h1>
+      <img src="../images/dr.png"  class="mx-auto d-block" style="width: 33%;height: 100%;margin-bottom: -33px;">
+        <div class="form-modal">
+            <div class="form-toggle">
+                <button id="ben" onclick="toggleEd()"> A D M I N </button>
+            </div>
+          
+            <div id="ed-form">
+                <!-- <form action="setDrRecords" method="POST"> -->
+                    <form>
+                    <!-- <input type="text" id="d_state" name="dr_state" placeholder="DOCTOR STATE"><br> -->
+                    <select id="d_state" class="browser-default custom-select custom-select-md mb-3">
+                      <option value="" disabled selected hidden>STATE</option>
+                      <option value="true">REGISTER</option>
+                      <option value="false">DELIST</option>
+                    </select>
+                    <input type="text" id="d_Id" name="dr_adrs" placeholder="DOCTOR ADDRESS"><br>
+                    <input type="text" id="d_Name" name="dr_name" placeholder="DOCTOR NAME"><br>
+                    <button type="submit" onclick="addDoctor(event)" class="btn login">ADD DOCTOR RECORDS</button>
+                  </form>
+                  <!-- <form action="getDrRecords" method="GET"> -->
+                    <form>
+                    <input type="text" id="dr_Id" name="did" placeholder="DOCTOR ADDRESS"><br>
+                    <button type="submit" id="btn1" onclick="getDoctor(event)" class="btn login"> GET DOCTOR RECORDS</button>
+                  </form>  
+            </div>
+        </div>
+
+        <div class="card" id="card1" style="width: 423px;margin-top: -437px">
+            <img class="card-img-top" src="./images/avatar.png" alt="Card image" style="width:22%;margin-left: 163px;">
+            <div class="card-body">
+              <b><h4 class="card-title" id="name" style="text-align: center"></h4></b>
+              ADDRESS : <b><p class="card-text" id="dr" style="text-align: center"></p></b>
+              STATUS : <b><p class="card-text" id="state" style="text-align: center"></p></b>
+            </div>
+          </div>
+
+
+            <script>
+                function toggleSt() {
+                    document.getElementById("ed-toggle").style.backgroundColor = "#fff";
+                    document.getElementById("ed-toggle").style.color = "#222";
+                    document.getElementById("st-toggle").style.backgroundColor = "#33cc99";
+                    document.getElementById("st-toggle").style.color = "#fff";
+                    document.getElementById("ed-form").style.display = "none";
+                    document.getElementById("st-form").style.display = "block";
+                }
+
+                function toggleEd() {
+                    document.getElementById("ed-toggle").style.backgroundColor = "#33cc99";
+                    document.getElementById("ed-toggle").style.color = "#fff";
+                    document.getElementById("st-toggle").style.backgroundColor = "#fff";
+                    document.getElementById("st-toggle").style.color = "#222";
+                    document.getElementById("st-form").style.display = "none";
+                    document.getElementById("ed-form").style.display = "block";
+                }
+
+                $(document).ready(function(){
+                    $('#card1').hide();
+                    $('#btn1').click(function(){
+                      $('#card1').show();
+                    });;
+                });
+            </script>
+            <script src='/javascripts/main.js'></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+        
+    </body>
+</html>

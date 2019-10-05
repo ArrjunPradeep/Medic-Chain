@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel='stylesheet' href='/stylesheets/index.css' />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+        <script src='/javascripts/main.js'></script>
+    </head>
+    <body class="b1">
+        <br>
+        <button style="padding-inline: 18px;" onclick="logout_med(event)" class="btn btn-danger"> L O G O U T </button><br><br>
+      </a><h1 class="f1" style="margin-top: -1em">Healthy@Chain</h1>
+        <div class="form-modal">
+            <div class="form-toggle">
+                <button id="ben" onclick="toggleEd()"> P E R M I S S I O N </button>
+            </div>
+          
+            <div id="ed-form">
+                <form action="getHealthRecords" method="POST">
+                    <input type="text" id="p_patientId" name="p_pid" placeholder="PATIENT ADDRESS"><br>
+                    <input type="text" id="p_doctorId" name="p_did" placeholder="DOCTOR ADDRESS"><br>
+                    <button type="submit" class="btn login">S U B M I T</button>  
+                </form>
+            </div>
+        </div>
+
+
+            <script>
+                function toggleSt() {
+                    document.getElementById("ed-toggle").style.backgroundColor = "#fff";
+                    document.getElementById("ed-toggle").style.color = "#222";
+                    document.getElementById("st-toggle").style.backgroundColor = "#33cc99";
+                    document.getElementById("st-toggle").style.color = "#fff";
+                    document.getElementById("ed-form").style.display = "none";
+                    document.getElementById("st-form").style.display = "block";
+                }
+
+                function toggleEd() {
+                    document.getElementById("ed-toggle").style.backgroundColor = "#33cc99";
+                    document.getElementById("ed-toggle").style.color = "#fff";
+                    document.getElementById("st-toggle").style.backgroundColor = "#fff";
+                    document.getElementById("st-toggle").style.color = "#222";
+                    document.getElementById("st-form").style.display = "none";
+                    document.getElementById("ed-form").style.display = "block";
+                }
+
+            </script>
+            <script src='/javascripts/main.js'></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+        
+    </body>
+</html>

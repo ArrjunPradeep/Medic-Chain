@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel='stylesheet' href='/stylesheets/index.css' />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+        <script src='/javascripts/main.js'></script>
+    </head>
+    <body class="b1">
+        <br>
+        <button style="padding-inline: 18px;" onclick="logout_med(event)" class="btn btn-danger"> L O G O U T </button><br><br>
+      </a><h1 class="f1" style="margin-top: -1em">Medic@Chain</h1>
+      <img src="../images/dr.png"  class="mx-auto d-block" style="width: 33%;height: 100%;margin-bottom: -33px;">
+        <div class="form-modal">
+            <div class="form-toggle">
+                <button id="ben" onclick="toggleEd()"> D O C T O R </button>
+            </div>
+          
+            <div id="ed-form">
+                   <form>
+                    <!-- <input type="text" id="drName" name="dr_name" placeholder="DOCTOR NAME"><br>
+                    <input type="text" id="drId" name="dr_adrs" placeholder="DOCTOR ADDRESS"><br> -->
+                    <input type="text" id="patientName" name="pa_name" placeholder="PATIENT NAME" required<br>
+                    <input type="text" id="patientId" name="pa_adrs" placeholder="PATIENT ADDRESS" required><br>
+                    <input type="text" id="inscription" name="pre_inscrptn" placeholder="INSCRIPTION" required><br>
+                    <button type="submit" onclick="addHealthRecords(event)" class="btn login">ADD HEALTH RECORDS</button>
+                  </form>
+                  <!-- <form action="getHealthRecords" method="get"> -->
+                   <form>
+                    <!-- <input type="text" id="d_Id" name="did" placeholder="DOCTOR ADDRESS"><br> -->
+                    <input type="text" id="p_Id" name="pid" placeholder="PATIENT ADDRESS"><br>
+                    <button type="submit" id="btn2" onclick="getHealthRecords(event)" class="btn login"> GET HEALTH RECORDS W.R.T. DOCTOR</button>
+                  </form>
+                  
+                  <form>
+                    <input type="text" id="patient_Id" name="p_id" placeholder="PATIENT ADDRESS"><br>
+                    <button type="submit" id="btn1" onclick="getHealthRecordsHistory(event)" class="btn login"> GET HEALTH RECORDS HISTORY</button>
+                  </form>
+
+                  <div class="card" id="card2" style="width: 423px;margin-top: -544px;margin-left: -425px;">
+                    <img class="card-img-top" src="./images/avatar.png" alt="Card image" style="width:22%;margin-left: 163px;">
+                    <div class="card-body">
+                      <h4 class="card-title" id="paname" style="text-align: center"></h4>
+                      DR NAME : <p class="card-text" id="drname" style="text-align: center"></p>
+                      DR ADDRESS : <p class="card-text" id="drid" style="text-align: center"></p>
+                      MY ADDRESS : <p class="card-text" id="paid" style="text-align: center"></p>
+                      PRESCRIPTION : <p class="card-text" id="drprescription" style="text-align: center"></p>
+                      PRESCRIPTION RECORDS : <p class="card-text" id="records" style="text-align: center"></p>
+        
+                    </div>
+                  </div>
+
+
+                  <div class="card" id="card1" style="width: 423px;margin-top: -378px;margin-left: 502px;">
+                    <img class="card-img-top" src="./images/avatar.png" alt="Card image" style="width:22%;margin-left: 163px;">
+                    <div class="card-body">
+                      <h4 class="card-title" id="name" style="text-align: center"></h4>
+                      ADDRESS : <p class="card-text" id="id" style="text-align: center"></p>
+                      STATUS : <p class="card-text" id="status" style="text-align: center"></p>
+                      PRESCRIPTION : <p class="card-text" id="prescription" style="text-align: center"></p>
+                    </div>
+                  </div>
+
+            </div>
+        </div>
+
+
+            <script>
+                function toggleSt() {
+                    document.getElementById("ed-toggle").style.backgroundColor = "#fff";
+                    document.getElementById("ed-toggle").style.color = "#222";
+                    document.getElementById("st-toggle").style.backgroundColor = "#33cc99";
+                    document.getElementById("st-toggle").style.color = "#fff";
+                    document.getElementById("ed-form").style.display = "none";
+                    document.getElementById("st-form").style.display = "block";
+                }
+
+                function toggleEd() {
+                    document.getElementById("ed-toggle").style.backgroundColor = "#33cc99";
+                    document.getElementById("ed-toggle").style.color = "#fff";
+                    document.getElementById("st-toggle").style.backgroundColor = "#fff";
+                    document.getElementById("st-toggle").style.color = "#222";
+                    document.getElementById("st-form").style.display = "none";
+                    document.getElementById("ed-form").style.display = "block";
+                }
+
+                $(document).ready(function(){
+                    $('#card2').hide();
+                    $('#btn2').click(function(){
+                      $('#card2').show();
+                    });;
+                });
+
+                $(document).ready(function(){
+                    $('#card1').hide();
+                    $('#btn1').click(function(){
+                      $('#card1').show();
+                    });;
+                });
+            </script>
+            <script src='/javascripts/main.js'></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+        
+    </body>
+</html>
